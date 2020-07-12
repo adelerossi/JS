@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="prova1"></div>
+
+
+  <script>
+    const fisso = "costante";
+    var i, a = 0, b = "ciao", c;
+    let nuova = 10; // Disponibile per elemento in cui si trova
+    
+    var elProva = document.getElementById("prova1");
+    //getElementById("#more-info").innerHTML = "";
+    elProva.innerHTML = "Mio testo";
+
+    a = 2;
+
+    // IF - ELSE IF - ELSE
+    if(a > 2) {
+      console.log('è maggiore');
+    }
+    else if (a < 2) {
+      console.log('è minore');
+    }
+    else {
+      console.log('è 2');
+    }
+
+    // CICLI - FOR
+    for(i = 1; i <= 10; i++) {
+      //finché i è uguale o minore a 10 esegui ciò che c'è nella parentesi
+      // Per strnghe di testo racchiudere il testo tra apici dopppie o singole " ''"
+      // Le variabili restano fuori dagli apici, per concatenare con testo utilizzare i + tra apici e nome variabile
+      console.log('For: ' + i + '---');
+    }
+
+    // WHILE
+    i = 0;
+    while(i < 10) {
+      i++;
+      console.log('While: ' + i + '---');
+    }
+    
+    // DO WHILE
+    i = 0;
+    do {
+      i++;
+      console.log('Do while: ' + i + '---');
+    } while (i < 10)
+
+    // ARRAY
+    var fruits = ['Pera', 'Pesca', 'Arancia'];
+    // Valori in array richiamabili singolarmente con il loro indice (pera = 0, pesca = 1, etc.)
+    // Esempio:
+    document.write(fruits[0]);
+    document.write('<br>');
+    document.write(fruits[1]);
+    document.write('<br>');
+    document.write(fruits[2]);
+
+
+    // FOR EACH su ARRAY
+    fruits.forEach(mostraFrutti);
+
+    function mostraFrutti(valore, index) {
+      console.log('Indice: ' + index + ' - Valore: ' + valore);
+      console.log(fruits[0]);
+
+      document.write(valore + '<br>');
+    }
+
+    // Oggetto associativo javascript 
+    var adeleOggetti = {auto: 'ferrari', pc: 'macbook'};
+    document.write(adeleOggetti.auto);
+</script>
+
+<!-- ESEMPI REALI -->
+
+<div id="circle"></div>
+
+<button onClick="cambiaColore('verde')">Verde</button>
+<button onClick="cambiaColore('rosso')">Rosso</button>
+<button onClick="cambiaColore('random')">Random</button>
+
+<script>
+    function cambiaColore(param) {
+      let elemento = document.getElementById('circle');
+
+      switch(param) {
+        case 'verde': elemento.style.backgroundColor = 'rgb(0, 255, 0)'; break;
+        case 'rosso': elemento.style.backgroundColor = 'rgb(255, 0, 0)'; break;
+        case 'random': elemento.style.backgroundColor = 
+        'rgb(' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ')'; break;
+      }
+    }
+
+  </script>
+
+
+<!-- UGUALE CON EVENT LISTENER -->
+
+<div id="circle2"></div>
+
+<button id="verde">Verde</button>
+<button id="rosso">Rosso</button>
+<button id="random">Random</button>
+
+<script>
+      let elemento = document.getElementById('circle2');
+
+      document.getElementById('verde').addEventListener('click', function(){
+        elemento.style.backgroundColor = 'rgb(0, 255, 0)';
+      } );
+
+      document.getElementById('rosso').addEventListener('click', function(){
+        elemento.style.backgroundColor = 'rgb(255, 0, 0)';
+      } );
+
+      document.getElementById('random').addEventListener('click', function(){
+        elemento.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ')';
+      } );
+  </script>
+
+
+
+</body>
+</html>
